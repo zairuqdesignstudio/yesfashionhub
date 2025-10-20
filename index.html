@@ -2,163 +2,336 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Yes Fashion Hub — Rajkot | Wholesale & Retail</title>
-  <meta name="description" content="Yes Fashion Hub — Rajkot based fashion wholesale & retail. Branded dress materials, Jaipuri cotton, real batik, designer collections. Reseller program." />
+  <meta name="description" content="Yes Fashion Hub — Rajkot based wholesaler & retailer. Branded dress materials, Real Batik, Jaipuri cotton, designer collections. Reseller program, fast dispatch, free shipping." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--accent:#d6336c;--accent-dark:#a0284e;--muted:#6b7280;--bg:#fff}
-    *{box-sizing:border-box}body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:linear-gradient(180deg,#fff,#fafafa);color:#111}
-    header{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:saturate(120%) blur(6px);box-shadow:0 2px 8px rgba(15,15,15,0.04);z-index:40}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
-    nav{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:48px;height:48px;background:linear-gradient(135deg,var(--accent),#ff7aa2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+    :root{
+      --bg:#f7fbff;
+      --card:#ffffff;
+      --blue:#0b57d0;
+      --blue-700:#0847a8;
+      --gold:#d6a23c;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.7);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#0b1530;}
+    a{color:inherit}
+    .container{max-width:1150px;margin:0 auto;padding:20px}
+    /* Header / Nav */
+    header{position:sticky;top:8px;z-index:60}
+    .navwrap{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));backdrop-filter: blur(6px);border-radius:16px;padding:10px 14px;box-shadow:0 8px 24px rgba(11,21,48,0.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo {
+      width:56px;height:56px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;color:#fff;
+      background:linear-gradient(135deg,var(--blue),#2a8eff);
+      box-shadow:0 8px 18px rgba(11,21,48,0.08);
+      font-size:18px;
+    }
     .brand h1{font-size:18px;margin:0}
     .brand p{margin:0;font-size:12px;color:var(--muted)}
-    .menu{display:flex;gap:16px}
-    .menu a{color:var(--muted);text-decoration:none;font-weight:600}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:36px 0}
-    .hero-card{padding:28px;border-radius:12px}
-    .headline{font-size:28px;line-height:1.04;margin:0 0 12px}
-    .sub{color:var(--muted);margin-bottom:18px}
-    .badges{display:flex;gap:10px;flex-wrap:wrap}
-    .pill{background:#fff;border:1px solid #f0f0f0;padding:8px 12px;border-radius:999px;font-weight:700}
-    .cta{display:flex;gap:10px;margin-top:18px}
-    .btn{background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}
-    .btn.secondary{background:#fff;color:var(--accent);border:1px solid #f0f0f0}
-    .features{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .feat{flex:1;min-width:160px;background:#fff;padding:12px;border-radius:10px;border:1px solid #f6f6f6}
-    .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:18px}
-    .card{background:#fff;padding:12px;border-radius:10px;border:1px solid #eee}
-    .card img{width:100%;height:180px;object-fit:cover;border-radius:8px}
-    .card h4{margin:10px 0 4px;font-size:15px}
-    .price{font-weight:800;color:var(--accent-dark)}
-    section{padding:26px 0}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    footer{padding:20px 0;text-align:center;color:var(--muted);font-size:14px}
-    @media (max-width:980px){.hero{grid-template-columns:1fr;}.menu{display:none}.split{grid-template-columns:1fr}.hero-card{padding:18px}}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{font-weight:600;color:var(--blue-700);text-decoration:none;padding:8px 10px;border-radius:10px}
+    .menu a:hover{background:rgba(11,87,208,0.06)}
+    .btn-primary{background:linear-gradient(90deg,var(--blue),#2a8eff);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(11,87,208,0.12)}
+    .hamburger{display:none;cursor:pointer;padding:8px;border-radius:8px}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:34px 0}
+    .hero-card{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px rgba(11,21,48,0.05)}
+    .headline{font-size:30px;margin:0 0 10px;color:var(--blue-700)}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .pills{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{background:linear-gradient(180deg,#fff,#fbfbfb);border:1px solid #f0f6ff;padding:8px 12px;border-radius:999px;font-weight:700;color:var(--blue-700)}
+    .hero-aside{padding:22px;border-radius:var(--radius);background:linear-gradient(135deg,#fff,#fbfdff);border:1px solid rgba(10,20,40,0.03)}
+    .list-compact{padding-left:16px;color:var(--muted)}
+    /* features row */
+    .features{display:flex;gap:14px;margin-top:16px;flex-wrap:wrap}
+    .feature{flex:1;min-width:160px;background:linear-gradient(180deg,#fff,#fcfdff);padding:12px;border-radius:12px;border:1px solid rgba(11,21,48,0.03);font-weight:700;color:var(--blue-700)}
+    /* Products */
+    .section-title{display:flex;align-items:end;justify-content:space-between;gap:12px}
+    .products{margin-top:18px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+    .card{background:var(--card);border-radius:12px;padding:12px;border:1px solid rgba(11,21,48,0.04);box-shadow:0 10px 24px rgba(11,21,48,0.04);display:flex;flex-direction:column;gap:10px}
+    .card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+    .card h4{margin:0;font-size:16px}
+    .price{color:var(--gold);font-weight:800}
+    /* product uploader preview row */
+    .uploader{display:flex;gap:10px;align-items:center;margin-top:10px}
+    .upload-btn{padding:10px 12px;border-radius:10px;border:1px dashed rgba(11,21,48,0.06);background:#fff;cursor:pointer}
+    /* Reseller / About / Contact */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+    .small{font-size:14px;color:var(--muted)}
+    .contact-card{padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#ffffff);border:1px solid rgba(11,21,48,0.03)}
+    /* Footer */
+    footer{margin-top:28px;padding:28px 0;text-align:center;color:var(--muted)}
+    /* animations */
+    .fade-up{opacity:0;transform:translateY(12px);transition:all 600ms cubic-bezier(.2,.9,.3,1)}
+    .fade-up.show{opacity:1;transform:none}
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .menu{display:none}
+      .hamburger{display:block}
+      .brand h1{font-size:16px}
+      .hero-aside{order:2}
+      .hero-card{order:1}
+      .split{grid-template-columns:1fr}
+    }
+    /* mobile nav drawer */
+    .drawer{position:fixed;right:12px;top:80px;background:var(--card);border-radius:12px;padding:12px;border:1px solid rgba(11,21,48,0.06);display:none;flex-direction:column;gap:8px;box-shadow:0 20px 40px rgba(11,21,48,0.08)}
+    .drawer.show{display:flex}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
+  <header class="container" id="top">
+    <div class="navwrap">
       <nav>
         <div class="brand">
           <div class="logo">YF</div>
           <div>
             <h1>Yes Fashion Hub</h1>
-            <p>Rajkot • Wholesale & Retail</p>
+            <p class="small">Rajkot • Wholesale & Retail • 10+ years</p>
           </div>
         </div>
-        <div class="menu">
-          <a href="#home">Home</a>
-          <a href="#products">Products</a>
-          <a href="#reseller">Reseller</a>
-          <a href="#contact">Contact</a>
+
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="menu" id="menuLarge">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#reseller">Reseller</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <a class="btn-primary" href="#contact">Call: +91 99780 51852</a>
+          <div class="hamburger" id="hambtn" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#0b57d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
         </div>
       </nav>
     </div>
+
+    <div class="drawer container" id="drawer">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#reseller">Reseller</a>
+      <a href="#contact">Contact</a>
+    </div>
   </header>
 
-  <main class="container" id="home">
-    <div class="hero">
-      <div class="hero-card">
-        <h2 class="headline">Yes Fashion Hub — 10+ years in fashion trade</h2>
-        <p class="sub">Deeptex, Mayur, Balaji jese branded dress materials — Real Batik, Jaipuri cotton, heavy designer collections. Retail & wholesale, direct factory rates, 100% quality assurance.</p>
+  <main class="container" id="home" style="padding-top:18px">
+    <section class="hero">
+      <div class="hero-card fade-up" id="heroLeft">
+        <h2 class="headline">Yes Fashion Hub — Trusted Fashion Trade from Rajkot</h2>
+        <p class="lead">Deeptex, Mayur, Balaji jaise branded dress materials. Real Batik, Jaipuri cotton, heavy designer collections — retail & wholesale at direct factory rates.</p>
 
-        <div class="badges">
-          <div class="pill">Fast Dispatch & Delivery</div>
+        <div class="pills">
+          <div class="pill">Fast Dispatch</div>
           <div class="pill">Free Shipping</div>
           <div class="pill">Easy Returns</div>
-          <div class="pill">Direct Factory Rate</div>
+          <div class="pill">100% Quality</div>
         </div>
 
-        <div class="cta">
-          <a class="btn" href="#products">View Products</a>
-          <a class="btn secondary" href="#contact">Contact Us</a>
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn-primary" href="#products">View Products</a>
+          <a style="padding:10px 12px;border-radius:10px;background:#fff;border:1px solid rgba(11,21,48,0.04);text-decoration:none;font-weight:700;color:var(--blue-700)" href="#reseller">Reseller Program</a>
         </div>
 
         <div class="features">
-          <div class="feat"><strong>Address</strong><br>Pedak Road, Near Patel Wadi, Sagar Complex, Rajkot</div>
-          <div class="feat"><strong>Phone</strong><br>+91 99780 51852</div>
-          <div class="feat"><strong>Email</strong><br>yesfashionhub@gmail.com</div>
+          <div class="feature">Direct Factory Price</div>
+          <div class="feature">Wholesale & Retail</div>
+          <div class="feature">Support for Resellers</div>
         </div>
       </div>
 
-      <aside class="hero-card">
-        <h3>Top Categories</h3>
-        <ul style="padding-left:18px;color:var(--muted)">
-          <li>Branded Dress Materials (Deeptex, Mayur, Balaji)</li>
+      <aside class="hero-aside hero-card fade-up" id="heroRight">
+        <h3 style="margin-top:0">Top Categories</h3>
+        <ul class="list-compact">
+          <li>Branded Dress Materials — Deeptex, Mayur, Balaji</li>
           <li>Real Batik (Heavy Quality)</li>
-          <li>Jaipuri Cotton & Readymades</li>
-          <li>Heavy Designer Collection</li>
+          <li>Jaipuri Cotton & Readymade</li>
+          <li>Heavy Designer Collections</li>
         </ul>
-        <div style="margin-top:12px">
+
+        <div style="margin-top:12px;background:linear-gradient(90deg,#fff,#fff);padding:10px;border-radius:10px;border:1px solid rgba(11,21,48,0.03)">
           <strong>Reseller Program</strong>
-          <p style="color:var(--muted);margin:6px 0">Join our reseller network — easy onboarding, good margins, many resellers already earning by selling online.</p>
+          <p class="small" style="margin:6px 0">Join hundreds of resellers — low startup, good margins, online selling support provided.</p>
+          <a style="display:inline-block;margin-top:6px;padding:8px 10px;border-radius:8px;background:linear-gradient(90deg,var(--blue),#2a8eff);color:#fff;text-decoration:none;font-weight:700" href="#contact">Become a Reseller</a>
         </div>
       </aside>
-    </div>
+    </section>
 
-    <section id="products">
-      <h3>Featured Products</h3>
-      <div class="products-grid" id="productsGrid">
-        <div class="card"><img src="https://via.placeholder.com/400x300?text=Product+1"><h4>Branded Dress Material</h4><div class="price">Factory Price</div></div>
-        <div class="card"><img src="https://via.placeholder.com/400x300?text=Product+2"><h4>Real Batik Heavy Quality</h4><div class="price">Wholesale & Retail</div></div>
-        <div class="card"><img src="https://via.placeholder.com/400x300?text=Product+3"><h4>Jaipuri Cotton</h4><div class="price">Top Quality</div></div>
-        <div class="card"><img src="https://via.placeholder.com/400x300?text=Product+4"><h4>Designer Collection</h4><div class="price">Limited Stock</div></div>
+    <!-- Products -->
+    <section id="products" style="margin-top:10px">
+      <div class="section-title">
+        <div>
+          <h3 style="margin:0">Featured Products</h3>
+          <p class="small" style="margin-top:6px">Replace placeholders with your product images. Click Upload to preview before committing to repo.</p>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <label class="upload-btn" title="Upload images">
+            Upload Images
+            <input id="fileInput" type="file" accept="image/*" multiple style="display:none">
+          </label>
+          <button id="resetBtn" class="upload-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="products">
+        <div class="grid" id="productsGrid">
+          <!-- 5 placeholder cards -->
+          <div class="card fade-up">
+            <img src="https://via.placeholder.com/600x400?text=Product+1" alt="Product 1">
+            <h4>Branded Dress Material</h4>
+            <div class="small">Deeptex / Mayur / Balaji</div>
+            <div class="price">Factory Rate</div>
+          </div>
+          <div class="card fade-up">
+            <img src="https://via.placeholder.com/600x400?text=Product+2" alt="Product 2">
+            <h4>Real Batik — Heavy</h4>
+            <div class="small">Premium Batik fabric</div>
+            <div class="price">Wholesale & Retail</div>
+          </div>
+          <div class="card fade-up">
+            <img src="https://via.placeholder.com/600x400?text=Product+3" alt="Product 3">
+            <h4>Jaipuri Cotton</h4>
+            <div class="small">Comfort & Classic</div>
+            <div class="price">Top Quality</div>
+          </div>
+          <div class="card fade-up">
+            <img src="https://via.placeholder.com/600x400?text=Product+4" alt="Product 4">
+            <h4>Designer Collection</h4>
+            <div class="small">Heavy Designer Pieces</div>
+            <div class="price">Limited Stock</div>
+          </div>
+          <div class="card fade-up">
+            <img src="https://via.placeholder.com/600x400?text=Product+5" alt="Product 5">
+            <h4>Readymade Collection</h4>
+            <div class="small">Ready to ship</div>
+            <div class="price">Fast Dispatch</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="reseller">
-      <h3>Reseller Service</h3>
+    <!-- Reseller -->
+    <section id="reseller" style="margin-top:22px">
+      <h3>Reseller Program</h3>
       <div class="split">
-        <div class="card">
-          <h4>Why become a reseller?</h4>
-          <ul style="color:var(--muted);padding-left:18px">
-            <li>Low startup cost, direct factory rates</li>
-            <li>Fast dispatch & bulk order support</li>
-            <li>High profit margins</li>
-            <li>Online selling guidance for resellers</li>
+        <div class="contact-card fade-up">
+          <h4 style="margin-top:0">Why join?</h4>
+          <ul class="small" style="padding-left:16px">
+            <li>Direct factory rates — better margins</li>
+            <li>Fast dispatch & bulk support</li>
+            <li>Online selling guidance & resources</li>
+            <li>Low startup & regular stock updates</li>
           </ul>
         </div>
-        <div class="card">
-          <h4>How to join</h4>
-          <p style="color:var(--muted)">Contact us at <strong>+91 99780 51852</strong> or <strong>yesfashionhub@gmail.com</strong>. Provide your name, city, and order volume to get onboarding details.</p>
+        <div class="contact-card fade-up">
+          <h4 style="margin-top:0">How to join</h4>
+          <p class="small">Contact us: <strong>+91 99780 51852</strong> or <strong>yesfashionhub@gmail.com</strong>. Send your name, city, and expected monthly order volume — we’ll guide you through onboarding.</p>
+          <p class="small" style="margin-top:8px"><strong>Benefits:</strong> Good margins, product support, marketing assets for resellers.</p>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <!-- Contact -->
+    <section id="contact" style="margin-top:22px">
       <h3>Contact & Visit</h3>
       <div class="split">
-        <div>
-          <div class="card">
-            <h4>Yes Fashion Hub</h4>
-            <p>Pedak Road, Near Patel Wadi, Sagar Complex, Rajkot</p>
-            <p><strong>Phone:</strong> <a href="tel:+919978051852">+91 99780 51852</a></p>
-            <p><strong>Email:</strong> <a href="mailto:yesfashionhub@gmail.com">yesfashionhub@gmail.com</a></p>
-            <p style="color:var(--muted)">Open for wholesale & retail. Fast dispatch. Free shipping on selected orders.</p>
-          </div>
+        <div class="contact-card fade-up">
+          <h4 style="margin-top:0">Yes Fashion Hub</h4>
+          <p class="small">Pedak Road, Near Patel Wadi, Sagar Complex, Rajkot</p>
+          <p class="small"><strong>Phone:</strong> <a href="tel:+919978051852">+91 99780 51852</a></p>
+          <p class="small"><strong>Email:</strong> <a href="mailto:yesfashionhub@gmail.com">yesfashionhub@gmail.com</a></p>
+          <p class="small" style="margin-top:8px">Open for wholesale & retail. Free shipping on selected orders. Easy returns policy.</p>
         </div>
-        <div>
-          <div class="card">
-            <h4>Send a message</h4>
-            <form id="contactForm">
-              <input placeholder="Your name" required style="width:100%;margin-bottom:8px;padding:10px;border-radius:8px;border:1px solid #eee">
-              <input placeholder="Phone" required style="width:100%;margin-bottom:8px;padding:10px;border-radius:8px;border:1px solid #eee">
-              <textarea placeholder="How can we help?" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;height:84px"></textarea>
-              <button class="btn" type="submit" style="margin-top:8px;width:100%">Send</button>
-            </form>
-          </div>
+
+        <div class="contact-card fade-up">
+          <h4 style="margin-top:0">Send a Message</h4>
+          <form id="contactForm">
+            <input id="cname" placeholder="Your name" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(11,21,48,0.06);margin-bottom:8px">
+            <input id="cphone" placeholder="Phone" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(11,21,48,0.06);margin-bottom:8px">
+            <textarea id="cmsg" placeholder="How can we help?" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(11,21,48,0.06);height:100px"></textarea>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <button type="submit" class="btn-primary" style="flex:1">Send Message</button>
+              <a href="mailto:yesfashionhub@gmail.com" class="upload-btn" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 12px">Email</a>
+            </div>
+            <p id="formStatus" class="small" style="margin-top:8px"></p>
+          </form>
         </div>
       </div>
     </section>
 
     <footer>
-      <p>© Yes Fashion Hub — Rajkot. Built by ZAIRUQ Design Studio.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-direction:column">
+        <div style="font-weight:700;color:var(--blue-700)">Yes Fashion Hub — Rajkot</div>
+        <div class="small">© <span id="year"></span> Built by ZAIRUQ Design Studio</div>
+      </div>
     </footer>
   </main>
+
+  <script>
+    // show year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile drawer
+    const hambtn = document.getElementById('hambtn');
+    const drawer = document.getElementById('drawer');
+    hambtn.addEventListener('click', ()=> drawer.classList.toggle('show'));
+
+    // smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+          drawer.classList.remove('show');
+        }
+      });
+    });
+
+    // fade-up reveal on scroll
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('show');
+      });
+    },{threshold:0.15});
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+    // upload images preview
+    const input = document.getElementById('fileInput');
+    const grid = document.getElementById('productsGrid');
+    const resetBtn = document.getElementById('resetBtn');
+    let defaultHTML = grid.innerHTML;
+    input.addEventListener('change', (ev)=>{
+      const files = Array.from(ev.target.files).slice(0,10);
+      if(!files.length) return;
+      grid.innerHTML = '';
+      files.forEach(file=>{
+        const url = URL.createObjectURL(file);
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<img src="${url}" alt="${file.name}"><h4>${file.name.split('.')[0]}</h4><div class="small">Preview</div><div class="price">Factory Rate</div>`;
+        grid.appendChild(card);
+      });
+    });
+    resetBtn.addEventListener('click', ()=>{
+      input.value = '';
+      grid.innerHTML = defaultHTML;
+    });
+
+    // contact form (client-only placeholder)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formStatus').textContent = 'Thank you! We will contact you shortly.';
+      this.reset();
+    });
+  </script>
 </body>
 </html>
